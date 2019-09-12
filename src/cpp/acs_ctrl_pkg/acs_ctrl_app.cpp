@@ -25,6 +25,7 @@ class AcsCtrlPkgApp : public CoreApplication
 };
 
 
+
 AcsCtrlPkgApp::AcsCtrlPkgApp()
  : CoreApplication()
  , cli("AcsCtrlPkg application", "GMT_")
@@ -70,6 +71,7 @@ void AcsCtrlPkgApp::start(int argc, char* argv[])
         CoreApplication::start ();
     }
 }
+
 
 int main (int argc, char* argv[])
 {
