@@ -34,6 +34,7 @@ void AcsMainCtrlBase::create_state()
     //create the input dataio of the class, and assign the default value
     new_input_dataio(digital_in,                "digital_in",            digital_in_t());
     new_input_dataio(analog_in,                 "analog_in",             analog_in_t());
+    new_input_dataio(ssi_in,                    "ssi_in",                std::array<ssi_in_t, 4>());
     new_input_dataio(power_supply,              "power_supply",          std::array<power_supply_t, 4>());
     new_input_dataio(resistor_bridge_status,    "resistor_bridge_status", std::array<resistor_bridge_status_t, 7>());
     new_input_dataio(digital_out_ext,           "digital_out_ext",       digital_out_t());
@@ -90,6 +91,7 @@ void AcsMainCtrlBase::setup_state(ComponentSetup& config)
     // create inputs
     new_input_dataio(digital_in,                "digital_in",            input_confs.digital_in);
     new_input_dataio(analog_in,                 "analog_in",             input_confs.analog_in);
+    new_input_dataio(ssi_in,                    "ssi_in",                input_confs.ssi_in);
     new_input_dataio(power_supply,              "power_supply",          input_confs.power_supply);
     new_input_dataio(resistor_bridge_status,    "resistor_bridge_status", input_confs.resistor_bridge_status);
     new_input_dataio(digital_out_ext,           "digital_out_ext",       input_confs.digital_out_ext);

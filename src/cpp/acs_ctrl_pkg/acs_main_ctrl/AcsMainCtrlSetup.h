@@ -26,13 +26,14 @@ struct AcsMainCtrlSetup : public  BaseControllerSetup
     {
         DataIODef<digital_in_t>        digital_in;
         DataIODef<analog_in_t>         analog_in;
+        DataIODef<std::array<ssi_in_t, 4>>  ssi_in;
         DataIODef<std::array<power_supply_t, 4>>  power_supply;
         DataIODef<std::array<resistor_bridge_status_t, 7>>  resistor_bridge_status;
         DataIODef<digital_out_t>       digital_out_ext;
         DataIODef<analog_out_t>        analog_out_ext;
         DataIODef<std::array<power_supply_t, 4>>  power_supply_ext;
         DataIODef<std::array<resistor_bridge_status_t, 7>>  resistor_bridge_status_ext;
-        MSGPACK_DEFINE_MAP(digital_in, analog_in, power_supply, resistor_bridge_status, digital_out_ext, analog_out_ext, power_supply_ext, resistor_bridge_status_ext, op_state_goal, sim_mode_goal, control_mode_goal)
+        MSGPACK_DEFINE_MAP(digital_in, analog_in, ssi_in, power_supply, resistor_bridge_status, digital_out_ext, analog_out_ext, power_supply_ext, resistor_bridge_status_ext, op_state_goal, sim_mode_goal, control_mode_goal)
     };
 
     struct OutputConf : public BaseControllerSetup::OutputConf

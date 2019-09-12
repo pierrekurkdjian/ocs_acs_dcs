@@ -61,6 +61,7 @@ class AcsMainCtrlBase : public BaseController
         // Inputs declaration
         digital_in_t             digital_in;          // Digital output (values)
         analog_in_t              analog_in;           // Analog output (values)
+        std::array<ssi_in_t, 4>  ssi_in;              // Power supply state
         std::array<power_supply_t, 4> power_supply;        // Power supply state
         std::array<resistor_bridge_status_t, 7> resistor_bridge_status; // Resistor bridge status
         digital_out_t            digital_out_ext;     // Digital output (values)
