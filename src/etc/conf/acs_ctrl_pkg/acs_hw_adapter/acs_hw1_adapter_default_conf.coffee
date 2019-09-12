@@ -21,14 +21,15 @@ module.exports =
         digital_out:         { name: 'digital_out',           port_type: 'pull',  url: 'tcp://127.0.0.1:8201', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
         analog_out:          { name: 'analog_out',            port_type: 'pull',  url: 'tcp://127.0.0.1:8202', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
         resistor_bridge_control: { name: 'resistor_bridge_control', port_type: 'pull',  url: 'tcp://127.0.0.1:8203', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
-        sdo_read_update_req: { name: 'sdo_read_update_req',   port_type: 'sub',   url: 'tcp://127.0.0.1:8000', blocking_mode: 'async', max_rate: 10000, nom_rate: 1,     owner: true  }
-        sdo_write_enable:    { name: 'sdo_write_enable',      port_type: 'sub',   url: 'tcp://127.0.0.1:8000', blocking_mode: 'async', max_rate: 10000, nom_rate: 1,     owner: true  }
+        sdo_read_update_req: { name: 'sdo_read_update_req',   port_type: 'sub',   url: 'tcp://127.0.0.1:8205', blocking_mode: 'async', max_rate: 10000, nom_rate: 1,     owner: true  }
+        sdo_write_enable:    { name: 'sdo_write_enable',      port_type: 'sub',   url: 'tcp://127.0.0.1:8206', blocking_mode: 'async', max_rate: 10000, nom_rate: 1,     owner: true  }
         op_state_goal:       { name: 'op_state_goal',         port_type: 'pull',  url: 'tcp://127.0.0.1:8000', blocking_mode: 'async', max_rate: 1,     nom_rate: 1,     owner: true}
 
     outputs:
         digital_in:          { name: 'digital_in',            port_type: 'push',  url: 'tcp://127.0.0.1:8101', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: false }
         analog_in:           { name: 'analog_in',             port_type: 'push',  url: 'tcp://127.0.0.1:8102', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: false }
-        power_supply:        { name: 'power_supply',          port_type: 'push',  url: 'tcp://127.0.0.1:8103', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: false }
-        resistor_bridge_status: { name: 'resistor_bridge_status', port_type: 'push',  url: 'tcp://127.0.0.1:8104', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: false }
-        sdo_read_update_done: { name: 'sdo_read_update_done',  port_type: 'pub',   url: 'tcp://127.0.0.1:8000', blocking_mode: 'async', max_rate: 10000, nom_rate: 1,     owner: true  }
+        ssi_in:              { name: 'ssi_in',                port_type: 'push',  url: 'tcp://127.0.0.1:8103', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: false }
+        power_supply:        { name: 'power_supply',          port_type: 'push',  url: 'tcp://127.0.0.1:8104', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: false }
+        resistor_bridge_status: { name: 'resistor_bridge_status', port_type: 'push',  url: 'tcp://127.0.0.1:8105', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: false }
+        sdo_read_update_done: { name: 'sdo_read_update_done',  port_type: 'pub',   url: 'tcp://127.0.0.1:8107', blocking_mode: 'async', max_rate: 10000, nom_rate: 1,     owner: true  }
         op_state_value:      { name: 'op_state_value',        port_type: 'push',  url: 'tcp://127.0.0.1:8000', blocking_mode: 'async', max_rate: 1,     nom_rate: 1,     owner: false}

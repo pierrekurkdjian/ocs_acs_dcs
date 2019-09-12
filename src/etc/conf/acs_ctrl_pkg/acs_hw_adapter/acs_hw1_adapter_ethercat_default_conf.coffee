@@ -36,6 +36,7 @@ module.exports =
 
     pdo_mapping: [
         #{ pdo_name: "bridge_in_value",       direction: "input", index: 0x1a01, sub_index: 0x1, size: 32}
+        # { pdo_name: "bridge_overrange",       direction: "input", index: 0x1a00, sub_index: 0x1, size: 16}
         { pdo_name: "bridge_real_value",       direction: "input", index: 0x1a02, sub_index: 0x1, size: 32}
     ]
 
@@ -66,6 +67,45 @@ module.exports =
         { name: "analog_out_1_value",        type: "rx_pdo",  label: "analog_out_1_value",        std_name: "analog_out_1_value",        module: 4,  domain: 0 }
         { name: "analog_out_2_value",        type: "rx_pdo",  label: "analog_out_2_value",        std_name: "analog_out_2_value",        module: 4,  domain: 0 }
 
+        { name: "ssi_in_1_1_data_error",     type: "tx_pdo",  label: "ssi_in_1_1_data_error",     std_name: "ssi_in_1_data_error",       module: 5,  domain: 0 }
+        { name: "ssi_in_1_1_frame_error",    type: "tx_pdo",  label: "ssi_in_1_1_frame_error",    std_name: "ssi_in_1_frame_error",      module: 5,  domain: 0 }
+        { name: "ssi_in_1_1_power_error",    type: "tx_pdo",  label: "ssi_in_1_1_power_error",    std_name: "ssi_in_1_power_error",      module: 5,  domain: 0 }
+        { name: "ssi_in_1_1_data_mismatch",  type: "tx_pdo",  label: "ssi_in_1_1_data_mismatch",  std_name: "ssi_in_1_data_mismatch",    module: 5,  domain: 0 }
+        { name: "ssi_in_1_1_sync_error",     type: "tx_pdo",  label: "ssi_in_1_1_sync_error",     std_name: "ssi_in_1_sync_error",       module: 5,  domain: 0 }
+        { name: "ssi_in_1_1_value",          type: "tx_pdo",  label: "ssi_in_1_1_value",          std_name: "ssi_in_1_value",            module: 5,  domain: 0 }
+        { name: "ssi_in_1_2_data_error",     type: "tx_pdo",  label: "ssi_in_1_2_data_error",     std_name: "ssi_in_2_data_error",       module: 5,  domain: 0 }
+        { name: "ssi_in_1_2_frame_error",    type: "tx_pdo",  label: "ssi_in_1_2_frame_error",    std_name: "ssi_in_2_frame_error",      module: 5,  domain: 0 }
+        { name: "ssi_in_1_2_power_error",    type: "tx_pdo",  label: "ssi_in_1_2_power_error",    std_name: "ssi_in_2_power_error",      module: 5,  domain: 0 }
+        { name: "ssi_in_1_2_data_mismatch",  type: "tx_pdo",  label: "ssi_in_1_2_data_mismatch",  std_name: "ssi_in_2_data_mismatch",    module: 5,  domain: 0 }
+        { name: "ssi_in_1_2_sync_error",     type: "tx_pdo",  label: "ssi_in_1_2_sync_error",     std_name: "ssi_in_2_sync_error",       module: 5,  domain: 0 }
+        { name: "ssi_in_1_2_value",          type: "tx_pdo",  label: "ssi_in_1_2_value",          std_name: "ssi_in_2_value",            module: 5,  domain: 0 }
+
+        { name: "ssi_in_2_1_data_error",     type: "tx_pdo",  label: "ssi_in_2_1_data_error",     std_name: "ssi_in_1_data_error",       module: 6,  domain: 0 }
+        { name: "ssi_in_2_1_frame_error",    type: "tx_pdo",  label: "ssi_in_2_1_frame_error",    std_name: "ssi_in_1_frame_error",      module: 6,  domain: 0 }
+        { name: "ssi_in_2_1_power_error",    type: "tx_pdo",  label: "ssi_in_2_1_power_error",    std_name: "ssi_in_1_power_error",      module: 6,  domain: 0 }
+        { name: "ssi_in_2_1_data_mismatch",  type: "tx_pdo",  label: "ssi_in_2_1_data_mismatch",  std_name: "ssi_in_1_data_mismatch",    module: 6,  domain: 0 }
+        { name: "ssi_in_2_1_sync_error",     type: "tx_pdo",  label: "ssi_in_2_1_sync_error",     std_name: "ssi_in_1_sync_error",       module: 6,  domain: 0 }
+        { name: "ssi_in_2_1_value",          type: "tx_pdo",  label: "ssi_in_2_1_value",          std_name: "ssi_in_1_value",            module: 6,  domain: 0 }
+        { name: "ssi_in_2_2_data_error",     type: "tx_pdo",  label: "ssi_in_2_2_data_error",     std_name: "ssi_in_2_data_error",       module: 6,  domain: 0 }
+        { name: "ssi_in_2_2_frame_error",    type: "tx_pdo",  label: "ssi_in_2_2_frame_error",    std_name: "ssi_in_2_frame_error",      module: 6,  domain: 0 }
+        { name: "ssi_in_2_2_power_error",    type: "tx_pdo",  label: "ssi_in_2_2_power_error",    std_name: "ssi_in_2_power_error",      module: 6,  domain: 0 }
+        { name: "ssi_in_2_2_data_mismatch",  type: "tx_pdo",  label: "ssi_in_2_2_data_mismatch",  std_name: "ssi_in_2_data_mismatch",    module: 6,  domain: 0 }
+        { name: "ssi_in_2_2_sync_error",     type: "tx_pdo",  label: "ssi_in_2_2_sync_error",     std_name: "ssi_in_2_sync_error",       module: 6,  domain: 0 }
+        { name: "ssi_in_2_2_value",          type: "tx_pdo",  label: "ssi_in_2_2_value",          std_name: "ssi_in_2_value",            module: 6,  domain: 0 }
+
+        { name: "ssi_in_3_1_data_error",     type: "tx_pdo",  label: "ssi_in_3_1_data_error",     std_name: "ssi_in_1_data_error",       module: 7,  domain: 0 }
+        { name: "ssi_in_3_1_frame_error",    type: "tx_pdo",  label: "ssi_in_3_1_frame_error",    std_name: "ssi_in_1_frame_error",      module: 7,  domain: 0 }
+        { name: "ssi_in_3_1_power_error",    type: "tx_pdo",  label: "ssi_in_3_1_power_error",    std_name: "ssi_in_1_power_error",      module: 7,  domain: 0 }
+        { name: "ssi_in_3_1_data_mismatch",  type: "tx_pdo",  label: "ssi_in_3_1_data_mismatch",  std_name: "ssi_in_1_data_mismatch",    module: 7,  domain: 0 }
+        { name: "ssi_in_3_1_sync_error",     type: "tx_pdo",  label: "ssi_in_3_1_sync_error",     std_name: "ssi_in_1_sync_error",       module: 7,  domain: 0 }
+        { name: "ssi_in_3_1_value",          type: "tx_pdo",  label: "ssi_in_3_1_value",          std_name: "ssi_in_1_value",            module: 7,  domain: 0 }
+        { name: "ssi_in_3_2_data_error",     type: "tx_pdo",  label: "ssi_in_3_2_data_error",     std_name: "ssi_in_2_data_error",       module: 7,  domain: 0 }
+        { name: "ssi_in_3_2_frame_error",    type: "tx_pdo",  label: "ssi_in_3_2_frame_error",    std_name: "ssi_in_2_frame_error",      module: 7,  domain: 0 }
+        { name: "ssi_in_3_2_power_error",    type: "tx_pdo",  label: "ssi_in_3_2_power_error",    std_name: "ssi_in_2_power_error",      module: 7,  domain: 0 }
+        { name: "ssi_in_3_2_data_mismatch",  type: "tx_pdo",  label: "ssi_in_3_2_data_mismatch",  std_name: "ssi_in_2_data_mismatch",    module: 7,  domain: 0 }
+        { name: "ssi_in_3_2_sync_error",     type: "tx_pdo",  label: "ssi_in_3_2_sync_error",     std_name: "ssi_in_2_sync_error",       module: 7,  domain: 0 }
+        { name: "ssi_in_3_2_value",          type: "tx_pdo",  label: "ssi_in_3_2_value",          std_name: "ssi_in_2_value",            module: 7,  domain: 0 }
+
         # 3-module Power supply
         { name: "power_1_on",                  type: "tx_pdo",  label: "power_1_on",                  std_name: "power_on",                  module: 8, domain: 0 }
         { name: "power_1_overload",            type: "tx_pdo",  label: "power_1_overload",            std_name: "power_overload",            module: 8, domain: 0 }
@@ -83,12 +123,48 @@ module.exports =
         { name: "bridge_1_steady_state",       type: "tx_pdo",  label: "bridge_1_steady_state",       std_name: "bridge_steady_state",        module: 9,  domain: 0 }
         { name: "bridge_1_sync_error",         type: "tx_pdo",  label: "bridge_1_sync_error",         std_name: "bridge_sync_error",          module: 9,  domain: 0 }
         { name: "bridge_1_toggle",             type: "tx_pdo",  label: "bridge_1_toggle",             std_name: "bridge_toggle",              module: 9,  domain: 0 }
+        { name: "bridge_1_int_value",          type: "tx_pdo",  label: "bridge_1_int_value",          std_name: "bridge_int_value",           module: 9,  domain: 0 }
         { name: "bridge_1_real_value",         type: "tx_pdo",  label: "bridge_1_real_value",         std_name: "bridge_real_value",          module: 9,  domain: 0 }
         { name: "bridge_1_start_calibration",  type: "rx_pdo",  label: "bridge_1_start_calibration",  std_name: "bridge_start_calibration",   module: 9,  domain: 0 }
         { name: "bridge_1_disable_calibration",type: "rx_pdo",  label: "bridge_1_disable_calibration",std_name: "bridge_disable_calibration", module: 9,  domain: 0 }
         { name: "bridge_1_input_freeze",       type: "rx_pdo",  label: "bridge_1_input_freeze",       std_name: "bridge_input_freeze",        module: 9,  domain: 0 }
         { name: "bridge_1_sample_mode",        type: "rx_pdo",  label: "bridge_1_sample_mode",        std_name: "bridge_sample_mode",         module: 9,  domain: 0 }
-        { name: "bridge_1_tara",               type: "rx_pdo",  label: "bridge_1_tara",               std_name: "bridge_tara",                module: 9,  domain: 0 }
+        # { name: "bridge_1_tara",               type: "rx_pdo",  label: "bridge_1_tara",               std_name: "bridge_tara",                module: 9,  domain: 0 }
+        { name: "bridge_1_mode0_enable_filter_rx",        type: "rx_sdo",  label: "bridge_1_mode0_enable_filter_rx",        std_name: "bridge_mode0_enable_filter",        module: 9,  domain: 0 }
+        { name: "bridge_1_mode1_enable_filter_rx",        type: "rx_sdo",  label: "bridge_1_mode1_enable_filter_rx",        std_name: "bridge_mode1_enable_filter",        module: 9,  domain: 0 }
+        { name: "bridge_1_mode0_enable_averager_rx",      type: "rx_sdo",  label: "bridge_1_mode0_enable_averager_rx",      std_name: "bridge_mode0_enable_averager",      module: 9,  domain: 0 }
+        { name: "bridge_1_mode1_enable_averager_rx",      type: "rx_sdo",  label: "bridge_1_mode1_enable_averager_rx",      std_name: "bridge_mode1_enable_averager",      module: 9,  domain: 0 }
+        { name: "bridge_1_mode0_filter_settings_rx",      type: "rx_sdo",  label: "bridge_1_mode0_filter_settings_rx",      std_name: "bridge_mode0_filter_settings",      module: 9,  domain: 0 }
+        { name: "bridge_1_mode1_filter_settings_rx",      type: "rx_sdo",  label: "bridge_1_mode1_filter_settings_rx",      std_name: "bridge_mode1_filter_settings",      module: 9,  domain: 0 }
+        { name: "bridge_1_dynamic_filter_change_time_rx", type: "rx_sdo",  label: "bridge_1_dynamic_filter_change_time_rx", std_name: "bridge_dynamic_filter_change_time", module: 9,  domain: 0 }
+        { name: "bridge_1_dynamic_filter_delta_rx",       type: "rx_sdo",  label: "bridge_1_dynamic_filter_delta_rx",       std_name: "bridge_dynamic_filter_delta",       module: 9,  domain: 0 }
+        { name: "bridge_1_filter_settings_rx",            type: "rx_sdo",  label: "bridge_1_filter_settings_rx",            std_name: "bridge_filter_settings",            module: 9,  domain: 0 }
+        { name: "bridge_1_gain_rx",                       type: "rx_sdo",  label: "bridge_1_gain_rx",                       std_name: "bridge_gain",                       module: 9,  domain: 0 }
+        { name: "bridge_1_tara_rx",                       type: "rx_sdo",  label: "bridge_1_tara_rx",                       std_name: "bridge_tara",                       module: 9,  domain: 0 }
+        { name: "bridge_1_rated_output_rx",               type: "rx_sdo",  label: "bridge_1_rated_output_rx",               std_name: "bridge_rated_output",               module: 9,  domain: 0 }
+        { name: "bridge_1_nominal_load_rx",               type: "rx_sdo",  label: "bridge_1_nominal_load_rx",               std_name: "bridge_nominal_load",               module: 9,  domain: 0 }
+        { name: "bridge_1_filter_zero_balance_rx",        type: "rx_sdo",  label: "bridge_1_filter_zero_balance_rx",        std_name: "bridge_filter_zero_balance",        module: 9,  domain: 0 }
+        { name: "bridge_1_gravity_of_earth_rx",           type: "rx_sdo",  label: "bridge_1_gravity_of_earth_rx",           std_name: "bridge_gravity_of_earth",           module: 9,  domain: 0 }
+        { name: "bridge_1_scale_factor_rx",               type: "rx_sdo",  label: "bridge_1_scale_factor_rx",               std_name: "bridge_scale_factor",               module: 9,  domain: 0 }
+        { name: "bridge_1_reference_load_rx",             type: "rx_sdo",  label: "bridge_1_reference_load_rx",             std_name: "bridge_reference_load",             module: 9,  domain: 0 }
+
+        { name: "bridge_1_mode0_enable_filter_tx",        type: "tx_sdo",  label: "bridge_1_mode0_enable_filter_tx",        std_name: "bridge_mode0_enable_filter",        module: 9,  domain: 0 }
+        { name: "bridge_1_mode1_enable_filter_tx",        type: "tx_sdo",  label: "bridge_1_mode1_enable_filter_tx",        std_name: "bridge_mode1_enable_filter",        module: 9,  domain: 0 }
+        { name: "bridge_1_mode0_enable_averager_tx",      type: "tx_sdo",  label: "bridge_1_mode0_enable_averager_tx",      std_name: "bridge_mode0_enable_averager",      module: 9,  domain: 0 }
+        { name: "bridge_1_mode1_enable_averager_tx",      type: "tx_sdo",  label: "bridge_1_mode1_enable_averager_tx",      std_name: "bridge_mode1_enable_averager",      module: 9,  domain: 0 }
+        { name: "bridge_1_mode0_filter_settings_tx",      type: "tx_sdo",  label: "bridge_1_mode0_filter_settings_tx",      std_name: "bridge_mode0_filter_settings",      module: 9,  domain: 0 }
+        { name: "bridge_1_mode1_filter_settings_tx",      type: "tx_sdo",  label: "bridge_1_mode1_filter_settings_tx",      std_name: "bridge_mode1_filter_settings",      module: 9,  domain: 0 }
+        { name: "bridge_1_dynamic_filter_change_time_tx", type: "tx_sdo",  label: "bridge_1_dynamic_filter_change_time_tx", std_name: "bridge_dynamic_filter_change_time", module: 9,  domain: 0 }
+        { name: "bridge_1_dynamic_filter_delta_tx",       type: "tx_sdo",  label: "bridge_1_dynamic_filter_delta_tx",       std_name: "bridge_dynamic_filter_delta",       module: 9,  domain: 0 }
+        { name: "bridge_1_filter_settings_tx",            type: "tx_sdo",  label: "bridge_1_filter_settings_tx",            std_name: "bridge_filter_settings",            module: 9,  domain: 0 }
+        { name: "bridge_1_gain_tx",                       type: "tx_sdo",  label: "bridge_1_gain_tx",                       std_name: "bridge_gain",                       module: 9,  domain: 0 }
+        { name: "bridge_1_tara_tx",                       type: "tx_sdo",  label: "bridge_1_tara_tx",                       std_name: "bridge_tara",                       module: 9,  domain: 0 }
+        { name: "bridge_1_rated_output_tx",               type: "tx_sdo",  label: "bridge_1_rated_output_tx",               std_name: "bridge_rated_output",               module: 9,  domain: 0 }
+        { name: "bridge_1_nominal_load_tx",               type: "tx_sdo",  label: "bridge_1_nominal_load_tx",               std_name: "bridge_nominal_load",               module: 9,  domain: 0 }
+        { name: "bridge_1_filter_zero_balance_tx",        type: "tx_sdo",  label: "bridge_1_filter_zero_balance_tx",        std_name: "bridge_filter_zero_balance",        module: 9,  domain: 0 }
+        { name: "bridge_1_gravity_of_earth_tx",           type: "tx_sdo",  label: "bridge_1_gravity_of_earth_tx",           std_name: "bridge_gravity_of_earth",           module: 9,  domain: 0 }
+        { name: "bridge_1_scale_factor_tx",               type: "tx_sdo",  label: "bridge_1_scale_factor_tx",               std_name: "bridge_scale_factor",               module: 9,  domain: 0 }
+        { name: "bridge_1_reference_load_tx",             type: "tx_sdo",  label: "bridge_1_reference_load_tx",             std_name: "bridge_reference_load",             module: 9,  domain: 0 }
 
         # Resistor bridge 2
         { name: "bridge_2_gap",                type: "tx_pdo",  label: "bridge_2_gap",                std_name: "bridge_gap",                 module: 10,  domain: 0 }
@@ -99,12 +175,50 @@ module.exports =
         { name: "bridge_2_steady_state",       type: "tx_pdo",  label: "bridge_2_steady_state",       std_name: "bridge_steady_state",        module: 10,  domain: 0 }
         { name: "bridge_2_sync_error",         type: "tx_pdo",  label: "bridge_2_sync_error",         std_name: "bridge_sync_error",          module: 10,  domain: 0 }
         { name: "bridge_2_toggle",             type: "tx_pdo",  label: "bridge_2_toggle",             std_name: "bridge_toggle",              module: 10,  domain: 0 }
+        { name: "bridge_2_int_value",          type: "tx_pdo",  label: "bridge_2_int_value",          std_name: "bridge_int_value",           module: 10,  domain: 0 }
         { name: "bridge_2_real_value",         type: "tx_pdo",  label: "bridge_2_real_value",         std_name: "bridge_real_value",          module: 10,  domain: 0 }
         { name: "bridge_2_start_calibration",  type: "rx_pdo",  label: "bridge_2_start_calibration",  std_name: "bridge_start_calibration",   module: 10,  domain: 0 }
         { name: "bridge_2_disable_calibration",type: "rx_pdo",  label: "bridge_2_disable_calibration",std_name: "bridge_disable_calibration", module: 10,  domain: 0 }
         { name: "bridge_2_input_freeze",       type: "rx_pdo",  label: "bridge_2_input_freeze",       std_name: "bridge_input_freeze",        module: 10,  domain: 0 }
         { name: "bridge_2_sample_mode",        type: "rx_pdo",  label: "bridge_2_sample_mode",        std_name: "bridge_sample_mode",         module: 10,  domain: 0 }
         { name: "bridge_2_tara",               type: "rx_pdo",  label: "bridge_2_tara",               std_name: "bridge_tara",                module: 10,  domain: 0 }
+
+        { name: "bridge_2_mode0_enable_filter_rx",        type: "rx_sdo",  label: "bridge_2_mode0_enable_filter_rx",        std_name: "bridge_mode0_enable_filter",        module: 10,  domain: 0 }
+        { name: "bridge_2_mode1_enable_filter_rx",        type: "rx_sdo",  label: "bridge_2_mode1_enable_filter_rx",        std_name: "bridge_mode1_enable_filter",        module: 10,  domain: 0 }
+        { name: "bridge_2_mode0_enable_averager_rx",      type: "rx_sdo",  label: "bridge_2_mode0_enable_averager_rx",      std_name: "bridge_mode0_enable_averager",      module: 10,  domain: 0 }
+        { name: "bridge_2_mode1_enable_averager_rx",      type: "rx_sdo",  label: "bridge_2_mode1_enable_averager_rx",      std_name: "bridge_mode1_enable_averager",      module: 10,  domain: 0 }
+        { name: "bridge_2_mode0_filter_settings_rx",      type: "rx_sdo",  label: "bridge_2_mode0_filter_settings_rx",      std_name: "bridge_mode0_filter_settings",      module: 10,  domain: 0 }
+        { name: "bridge_2_mode1_filter_settings_rx",      type: "rx_sdo",  label: "bridge_2_mode1_filter_settings_rx",      std_name: "bridge_mode1_filter_settings",      module: 10,  domain: 0 }
+        { name: "bridge_2_dynamic_filter_change_time_rx", type: "rx_sdo",  label: "bridge_2_dynamic_filter_change_time_rx", std_name: "bridge_dynamic_filter_change_time", module: 10,  domain: 0 }
+        { name: "bridge_2_dynamic_filter_delta_rx",       type: "rx_sdo",  label: "bridge_2_dynamic_filter_delta_rx",       std_name: "bridge_dynamic_filter_delta",       module: 10,  domain: 0 }
+        { name: "bridge_2_filter_settings_rx",            type: "rx_sdo",  label: "bridge_2_filter_settings_rx",            std_name: "bridge_filter_settings",            module: 10,  domain: 0 }
+        { name: "bridge_2_gain_rx",                       type: "rx_sdo",  label: "bridge_2_gain_rx",                       std_name: "bridge_gain",                       module: 10,  domain: 0 }
+        { name: "bridge_2_tara_rx",                       type: "rx_sdo",  label: "bridge_2_tara_rx",                       std_name: "bridge_tara",                       module: 10,  domain: 0 }
+        { name: "bridge_2_rated_output_rx",               type: "rx_sdo",  label: "bridge_2_rated_output_rx",               std_name: "bridge_rated_output",               module: 10,  domain: 0 }
+        { name: "bridge_2_nominal_load_rx",               type: "rx_sdo",  label: "bridge_2_nominal_load_rx",               std_name: "bridge_nominal_load",               module: 10,  domain: 0 }
+        { name: "bridge_2_filter_zero_balance_rx",        type: "rx_sdo",  label: "bridge_2_filter_zero_balance_rx",        std_name: "bridge_filter_zero_balance",        module: 10,  domain: 0 }
+        { name: "bridge_2_gravity_of_earth_rx",           type: "rx_sdo",  label: "bridge_2_gravity_of_earth_rx",           std_name: "bridge_gravity_of_earth",           module: 10,  domain: 0 }
+        { name: "bridge_2_scale_factor_rx",               type: "rx_sdo",  label: "bridge_2_scale_factor_rx",               std_name: "bridge_scale_factor",               module: 10,  domain: 0 }
+        { name: "bridge_2_reference_load_rx",             type: "rx_sdo",  label: "bridge_2_reference_load_rx",             std_name: "bridge_reference_load",             module: 10,  domain: 0 }
+
+        { name: "bridge_2_mode0_enable_filter_tx",        type: "tx_sdo",  label: "bridge_2_mode0_enable_filter_tx",        std_name: "bridge_mode0_enable_filter",        module: 10,  domain: 0 }
+        { name: "bridge_2_mode1_enable_filter_tx",        type: "tx_sdo",  label: "bridge_2_mode1_enable_filter_tx",        std_name: "bridge_mode1_enable_filter",        module: 10,  domain: 0 }
+        { name: "bridge_2_mode0_enable_averager_tx",      type: "tx_sdo",  label: "bridge_2_mode0_enable_averager_tx",      std_name: "bridge_mode0_enable_averager",      module: 10,  domain: 0 }
+        { name: "bridge_2_mode1_enable_averager_tx",      type: "tx_sdo",  label: "bridge_2_mode1_enable_averager_tx",      std_name: "bridge_mode1_enable_averager",      module: 10,  domain: 0 }
+        { name: "bridge_2_mode0_filter_settings_tx",      type: "tx_sdo",  label: "bridge_2_mode0_filter_settings_tx",      std_name: "bridge_mode0_filter_settings",      module: 10,  domain: 0 }
+        { name: "bridge_2_mode1_filter_settings_tx",      type: "tx_sdo",  label: "bridge_2_mode1_filter_settings_tx",      std_name: "bridge_mode1_filter_settings",      module: 10,  domain: 0 }
+        { name: "bridge_2_dynamic_filter_change_time_tx", type: "tx_sdo",  label: "bridge_2_dynamic_filter_change_time_tx", std_name: "bridge_dynamic_filter_change_time", module: 10,  domain: 0 }
+        { name: "bridge_2_dynamic_filter_delta_tx",       type: "tx_sdo",  label: "bridge_2_dynamic_filter_delta_tx",       std_name: "bridge_dynamic_filter_delta",       module: 10,  domain: 0 }
+        { name: "bridge_2_filter_settings_tx",            type: "tx_sdo",  label: "bridge_2_filter_settings_tx",            std_name: "bridge_filter_settings",            module: 10,  domain: 0 }
+        { name: "bridge_2_gain_tx",                       type: "tx_sdo",  label: "bridge_2_gain_tx",                       std_name: "bridge_gain",                       module: 10,  domain: 0 }
+        { name: "bridge_2_tara_tx",                       type: "tx_sdo",  label: "bridge_2_tara_tx",                       std_name: "bridge_tara",                       module: 10,  domain: 0 }
+        { name: "bridge_2_rated_output_tx",               type: "tx_sdo",  label: "bridge_2_rated_output_tx",               std_name: "bridge_rated_output",               module: 10,  domain: 0 }
+        { name: "bridge_2_nominal_load_tx",               type: "tx_sdo",  label: "bridge_2_nominal_load_tx",               std_name: "bridge_nominal_load",               module: 10,  domain: 0 }
+        { name: "bridge_2_filter_zero_balance_tx",        type: "tx_sdo",  label: "bridge_2_filter_zero_balance_tx",        std_name: "bridge_filter_zero_balance",        module: 10,  domain: 0 }
+        { name: "bridge_2_gravity_of_earth_tx",           type: "tx_sdo",  label: "bridge_2_gravity_of_earth_tx",           std_name: "bridge_gravity_of_earth",           module: 10,  domain: 0 }
+        { name: "bridge_2_scale_factor_tx",               type: "tx_sdo",  label: "bridge_2_scale_factor_tx",               std_name: "bridge_scale_factor",               module: 10,  domain: 0 }
+        { name: "bridge_2_reference_load_tx",             type: "tx_sdo",  label: "bridge_2_reference_load_tx",             std_name: "bridge_reference_load",             module: 10,  domain: 0 }
+
 
         # Resistor bridge 3
         { name: "bridge_3_gap",                type: "tx_pdo",  label: "bridge_3_gap",                std_name: "bridge_gap",                 module: 12,  domain: 0 }
@@ -115,12 +229,49 @@ module.exports =
         { name: "bridge_3_steady_state",       type: "tx_pdo",  label: "bridge_3_steady_state",       std_name: "bridge_steady_state",        module: 12,  domain: 0 }
         { name: "bridge_3_sync_error",         type: "tx_pdo",  label: "bridge_3_sync_error",         std_name: "bridge_sync_error",          module: 12,  domain: 0 }
         { name: "bridge_3_toggle",             type: "tx_pdo",  label: "bridge_3_toggle",             std_name: "bridge_toggle",              module: 12,  domain: 0 }
+        { name: "bridge_3_int_value",          type: "tx_pdo",  label: "bridge_3_int_value",          std_name: "bridge_int_value",           module: 12,  domain: 0 }
         { name: "bridge_3_real_value",         type: "tx_pdo",  label: "bridge_3_real_value",         std_name: "bridge_real_value",          module: 12,  domain: 0 }
         { name: "bridge_3_start_calibration",  type: "rx_pdo",  label: "bridge_3_start_calibration",  std_name: "bridge_start_calibration",   module: 12,  domain: 0 }
         { name: "bridge_3_disable_calibration",type: "rx_pdo",  label: "bridge_3_disable_calibration",std_name: "bridge_disable_calibration", module: 12,  domain: 0 }
         { name: "bridge_3_input_freeze",       type: "rx_pdo",  label: "bridge_3_input_freeze",       std_name: "bridge_input_freeze",        module: 12,  domain: 0 }
         { name: "bridge_3_sample_mode",        type: "rx_pdo",  label: "bridge_3_sample_mode",        std_name: "bridge_sample_mode",         module: 12,  domain: 0 }
         { name: "bridge_3_tara",               type: "rx_pdo",  label: "bridge_3_tara",               std_name: "bridge_tara",                module: 12,  domain: 0 }
+
+        { name: "bridge_3_mode0_enable_filter_rx",        type: "rx_sdo",  label: "bridge_3_mode0_enable_filter_rx",        std_name: "bridge_mode0_enable_filter",        module: 12,  domain: 0 }
+        { name: "bridge_3_mode1_enable_filter_rx",        type: "rx_sdo",  label: "bridge_3_mode1_enable_filter_rx",        std_name: "bridge_mode1_enable_filter",        module: 12,  domain: 0 }
+        { name: "bridge_3_mode0_enable_averager_rx",      type: "rx_sdo",  label: "bridge_3_mode0_enable_averager_rx",      std_name: "bridge_mode0_enable_averager",      module: 12,  domain: 0 }
+        { name: "bridge_3_mode1_enable_averager_rx",      type: "rx_sdo",  label: "bridge_3_mode1_enable_averager_rx",      std_name: "bridge_mode1_enable_averager",      module: 12,  domain: 0 }
+        { name: "bridge_3_mode0_filter_settings_rx",      type: "rx_sdo",  label: "bridge_3_mode0_filter_settings_rx",      std_name: "bridge_mode0_filter_settings",      module: 12,  domain: 0 }
+        { name: "bridge_3_mode1_filter_settings_rx",      type: "rx_sdo",  label: "bridge_3_mode1_filter_settings_rx",      std_name: "bridge_mode1_filter_settings",      module: 12,  domain: 0 }
+        { name: "bridge_3_dynamic_filter_change_time_rx", type: "rx_sdo",  label: "bridge_3_dynamic_filter_change_time_rx", std_name: "bridge_dynamic_filter_change_time", module: 12,  domain: 0 }
+        { name: "bridge_3_dynamic_filter_delta_rx",       type: "rx_sdo",  label: "bridge_3_dynamic_filter_delta_rx",       std_name: "bridge_dynamic_filter_delta",       module: 12,  domain: 0 }
+        { name: "bridge_3_filter_settings_rx",            type: "rx_sdo",  label: "bridge_3_filter_settings_rx",            std_name: "bridge_filter_settings",            module: 12,  domain: 0 }
+        { name: "bridge_3_gain_rx",                       type: "rx_sdo",  label: "bridge_3_gain_rx",                       std_name: "bridge_gain",                       module: 12,  domain: 0 }
+        { name: "bridge_3_tara_rx",                       type: "rx_sdo",  label: "bridge_3_tara_rx",                       std_name: "bridge_tara",                       module: 12,  domain: 0 }
+        { name: "bridge_3_rated_output_rx",               type: "rx_sdo",  label: "bridge_3_rated_output_rx",               std_name: "bridge_rated_output",               module: 12,  domain: 0 }
+        { name: "bridge_3_nominal_load_rx",               type: "rx_sdo",  label: "bridge_3_nominal_load_rx",               std_name: "bridge_nominal_load",               module: 12,  domain: 0 }
+        { name: "bridge_3_filter_zero_balance_rx",        type: "rx_sdo",  label: "bridge_3_filter_zero_balance_rx",        std_name: "bridge_filter_zero_balance",        module: 12,  domain: 0 }
+        { name: "bridge_3_gravity_of_earth_rx",           type: "rx_sdo",  label: "bridge_3_gravity_of_earth_rx",           std_name: "bridge_gravity_of_earth",           module: 12,  domain: 0 }
+        { name: "bridge_3_scale_factor_rx",               type: "rx_sdo",  label: "bridge_3_scale_factor_rx",               std_name: "bridge_scale_factor",               module: 12,  domain: 0 }
+        { name: "bridge_3_reference_load_rx",             type: "rx_sdo",  label: "bridge_3_reference_load_rx",             std_name: "bridge_reference_load",             module: 12,  domain: 0 }
+
+        { name: "bridge_3_mode0_enable_filter_tx",        type: "tx_sdo",  label: "bridge_3_mode0_enable_filter_tx",        std_name: "bridge_mode0_enable_filter",        module: 12,  domain: 0 }
+        { name: "bridge_3_mode1_enable_filter_tx",        type: "tx_sdo",  label: "bridge_3_mode1_enable_filter_tx",        std_name: "bridge_mode1_enable_filter",        module: 12,  domain: 0 }
+        { name: "bridge_3_mode0_enable_averager_tx",      type: "tx_sdo",  label: "bridge_3_mode0_enable_averager_tx",      std_name: "bridge_mode0_enable_averager",      module: 12,  domain: 0 }
+        { name: "bridge_3_mode1_enable_averager_tx",      type: "tx_sdo",  label: "bridge_3_mode1_enable_averager_tx",      std_name: "bridge_mode1_enable_averager",      module: 12,  domain: 0 }
+        { name: "bridge_3_mode0_filter_settings_tx",      type: "tx_sdo",  label: "bridge_3_mode0_filter_settings_tx",      std_name: "bridge_mode0_filter_settings",      module: 12,  domain: 0 }
+        { name: "bridge_3_mode1_filter_settings_tx",      type: "tx_sdo",  label: "bridge_3_mode1_filter_settings_tx",      std_name: "bridge_mode1_filter_settings",      module: 12,  domain: 0 }
+        { name: "bridge_3_dynamic_filter_change_time_tx", type: "tx_sdo",  label: "bridge_3_dynamic_filter_change_time_tx", std_name: "bridge_dynamic_filter_change_time", module: 12,  domain: 0 }
+        { name: "bridge_3_dynamic_filter_delta_tx",       type: "tx_sdo",  label: "bridge_3_dynamic_filter_delta_tx",       std_name: "bridge_dynamic_filter_delta",       module: 12,  domain: 0 }
+        { name: "bridge_3_filter_settings_tx",            type: "tx_sdo",  label: "bridge_3_filter_settings_tx",            std_name: "bridge_filter_settings",            module: 12,  domain: 0 }
+        { name: "bridge_3_gain_tx",                       type: "tx_sdo",  label: "bridge_3_gain_tx",                       std_name: "bridge_gain",                       module: 12,  domain: 0 }
+        { name: "bridge_3_tara_tx",                       type: "tx_sdo",  label: "bridge_3_tara_tx",                       std_name: "bridge_tara",                       module: 12,  domain: 0 }
+        { name: "bridge_3_rated_output_tx",               type: "tx_sdo",  label: "bridge_3_rated_output_tx",               std_name: "bridge_rated_output",               module: 12,  domain: 0 }
+        { name: "bridge_3_nominal_load_tx",               type: "tx_sdo",  label: "bridge_3_nominal_load_tx",               std_name: "bridge_nominal_load",               module: 12,  domain: 0 }
+        { name: "bridge_3_filter_zero_balance_tx",        type: "tx_sdo",  label: "bridge_3_filter_zero_balance_tx",        std_name: "bridge_filter_zero_balance",        module: 12,  domain: 0 }
+        { name: "bridge_3_gravity_of_earth_tx",           type: "tx_sdo",  label: "bridge_3_gravity_of_earth_tx",           std_name: "bridge_gravity_of_earth",           module: 12,  domain: 0 }
+        { name: "bridge_3_scale_factor_tx",               type: "tx_sdo",  label: "bridge_3_scale_factor_tx",               std_name: "bridge_scale_factor",               module: 12,  domain: 0 }
+        { name: "bridge_3_reference_load_tx",             type: "tx_sdo",  label: "bridge_3_reference_load_tx",             std_name: "bridge_reference_load",             module: 12,  domain: 0 }
 
         # Resistor bridge 4
         { name: "bridge_4_gap",                type: "tx_pdo",  label: "bridge_4_gap",                std_name: "bridge_gap",                 module: 13,  domain: 0 }
@@ -131,12 +282,49 @@ module.exports =
         { name: "bridge_4_steady_state",       type: "tx_pdo",  label: "bridge_4_steady_state",       std_name: "bridge_steady_state",        module: 13,  domain: 0 }
         { name: "bridge_4_sync_error",         type: "tx_pdo",  label: "bridge_4_sync_error",         std_name: "bridge_sync_error",          module: 13,  domain: 0 }
         { name: "bridge_4_toggle",             type: "tx_pdo",  label: "bridge_4_toggle",             std_name: "bridge_toggle",              module: 13,  domain: 0 }
-        { name: "bridge_4_real_value",          type: "tx_pdo",  label: "bridge_4_real_value",          std_name: "bridge_real_value",          module: 13,  domain: 0 }
+        { name: "bridge_4_int_value",          type: "tx_pdo",  label: "bridge_4_int_value",          std_name: "bridge_int_value",           module: 13,  domain: 0 }
+        { name: "bridge_4_real_value",         type: "tx_pdo",  label: "bridge_4_real_value",         std_name: "bridge_real_value",          module: 13,  domain: 0 }
         { name: "bridge_4_start_calibration",  type: "rx_pdo",  label: "bridge_4_start_calibration",  std_name: "bridge_start_calibration",   module: 13,  domain: 0 }
         { name: "bridge_4_disable_calibration",type: "rx_pdo",  label: "bridge_4_disable_calibration",std_name: "bridge_disable_calibration", module: 13,  domain: 0 }
         { name: "bridge_4_input_freeze",       type: "rx_pdo",  label: "bridge_4_input_freeze",       std_name: "bridge_input_freeze",        module: 13,  domain: 0 }
         { name: "bridge_4_sample_mode",        type: "rx_pdo",  label: "bridge_4_sample_mode",        std_name: "bridge_sample_mode",         module: 13,  domain: 0 }
         { name: "bridge_4_tara",               type: "rx_pdo",  label: "bridge_4_tara",               std_name: "bridge_tara",                module: 13,  domain: 0 }
+
+        { name: "bridge_4_mode0_enable_filter_rx",        type: "rx_sdo",  label: "bridge_4_mode0_enable_filter_rx",        std_name: "bridge_mode0_enable_filter",        module: 13,  domain: 0 }
+        { name: "bridge_4_mode1_enable_filter_rx",        type: "rx_sdo",  label: "bridge_4_mode1_enable_filter_rx",        std_name: "bridge_mode1_enable_filter",        module: 13,  domain: 0 }
+        { name: "bridge_4_mode0_enable_averager_rx",      type: "rx_sdo",  label: "bridge_4_mode0_enable_averager_rx",      std_name: "bridge_mode0_enable_averager",      module: 13,  domain: 0 }
+        { name: "bridge_4_mode1_enable_averager_rx",      type: "rx_sdo",  label: "bridge_4_mode1_enable_averager_rx",      std_name: "bridge_mode1_enable_averager",      module: 13,  domain: 0 }
+        { name: "bridge_4_mode0_filter_settings_rx",      type: "rx_sdo",  label: "bridge_4_mode0_filter_settings_rx",      std_name: "bridge_mode0_filter_settings",      module: 13,  domain: 0 }
+        { name: "bridge_4_mode1_filter_settings_rx",      type: "rx_sdo",  label: "bridge_4_mode1_filter_settings_rx",      std_name: "bridge_mode1_filter_settings",      module: 13,  domain: 0 }
+        { name: "bridge_4_dynamic_filter_change_time_rx", type: "rx_sdo",  label: "bridge_4_dynamic_filter_change_time_rx", std_name: "bridge_dynamic_filter_change_time", module: 13,  domain: 0 }
+        { name: "bridge_4_dynamic_filter_delta_rx",       type: "rx_sdo",  label: "bridge_4_dynamic_filter_delta_rx",       std_name: "bridge_dynamic_filter_delta",       module: 13,  domain: 0 }
+        { name: "bridge_4_filter_settings_rx",            type: "rx_sdo",  label: "bridge_4_filter_settings_rx",            std_name: "bridge_filter_settings",            module: 13,  domain: 0 }
+        { name: "bridge_4_gain_rx",                       type: "rx_sdo",  label: "bridge_4_gain_rx",                       std_name: "bridge_gain",                       module: 13,  domain: 0 }
+        { name: "bridge_4_tara_rx",                       type: "rx_sdo",  label: "bridge_4_tara_rx",                       std_name: "bridge_tara",                       module: 13,  domain: 0 }
+        { name: "bridge_4_rated_output_rx",               type: "rx_sdo",  label: "bridge_4_rated_output_rx",               std_name: "bridge_rated_output",               module: 13,  domain: 0 }
+        { name: "bridge_4_nominal_load_rx",               type: "rx_sdo",  label: "bridge_4_nominal_load_rx",               std_name: "bridge_nominal_load",               module: 13,  domain: 0 }
+        { name: "bridge_4_filter_zero_balance_rx",        type: "rx_sdo",  label: "bridge_4_filter_zero_balance_rx",        std_name: "bridge_filter_zero_balance",        module: 13,  domain: 0 }
+        { name: "bridge_4_gravity_of_earth_rx",           type: "rx_sdo",  label: "bridge_4_gravity_of_earth_rx",           std_name: "bridge_gravity_of_earth",           module: 13,  domain: 0 }
+        { name: "bridge_4_scale_factor_rx",               type: "rx_sdo",  label: "bridge_4_scale_factor_rx",               std_name: "bridge_scale_factor",               module: 13,  domain: 0 }
+        { name: "bridge_4_reference_load_rx",             type: "rx_sdo",  label: "bridge_4_reference_load_rx",             std_name: "bridge_reference_load",             module: 13,  domain: 0 }
+
+        { name: "bridge_4_mode0_enable_filter_tx",        type: "tx_sdo",  label: "bridge_4_mode0_enable_filter_tx",        std_name: "bridge_mode0_enable_filter",        module: 13,  domain: 0 }
+        { name: "bridge_4_mode1_enable_filter_tx",        type: "tx_sdo",  label: "bridge_4_mode1_enable_filter_tx",        std_name: "bridge_mode1_enable_filter",        module: 13,  domain: 0 }
+        { name: "bridge_4_mode0_enable_averager_tx",      type: "tx_sdo",  label: "bridge_4_mode0_enable_averager_tx",      std_name: "bridge_mode0_enable_averager",      module: 13,  domain: 0 }
+        { name: "bridge_4_mode1_enable_averager_tx",      type: "tx_sdo",  label: "bridge_4_mode1_enable_averager_tx",      std_name: "bridge_mode1_enable_averager",      module: 13,  domain: 0 }
+        { name: "bridge_4_mode0_filter_settings_tx",      type: "tx_sdo",  label: "bridge_4_mode0_filter_settings_tx",      std_name: "bridge_mode0_filter_settings",      module: 13,  domain: 0 }
+        { name: "bridge_4_mode1_filter_settings_tx",      type: "tx_sdo",  label: "bridge_4_mode1_filter_settings_tx",      std_name: "bridge_mode1_filter_settings",      module: 13,  domain: 0 }
+        { name: "bridge_4_dynamic_filter_change_time_tx", type: "tx_sdo",  label: "bridge_4_dynamic_filter_change_time_tx", std_name: "bridge_dynamic_filter_change_time", module: 13,  domain: 0 }
+        { name: "bridge_4_dynamic_filter_delta_tx",       type: "tx_sdo",  label: "bridge_4_dynamic_filter_delta_tx",       std_name: "bridge_dynamic_filter_delta",       module: 13,  domain: 0 }
+        { name: "bridge_4_filter_settings_tx",            type: "tx_sdo",  label: "bridge_4_filter_settings_tx",            std_name: "bridge_filter_settings",            module: 13,  domain: 0 }
+        { name: "bridge_4_gain_tx",                       type: "tx_sdo",  label: "bridge_4_gain_tx",                       std_name: "bridge_gain",                       module: 13,  domain: 0 }
+        { name: "bridge_4_tara_tx",                       type: "tx_sdo",  label: "bridge_4_tara_tx",                       std_name: "bridge_tara",                       module: 13,  domain: 0 }
+        { name: "bridge_4_rated_output_tx",               type: "tx_sdo",  label: "bridge_4_rated_output_tx",               std_name: "bridge_rated_output",               module: 13,  domain: 0 }
+        { name: "bridge_4_nominal_load_tx",               type: "tx_sdo",  label: "bridge_4_nominal_load_tx",               std_name: "bridge_nominal_load",               module: 13,  domain: 0 }
+        { name: "bridge_4_filter_zero_balance_tx",        type: "tx_sdo",  label: "bridge_4_filter_zero_balance_tx",        std_name: "bridge_filter_zero_balance",        module: 13,  domain: 0 }
+        { name: "bridge_4_gravity_of_earth_tx",           type: "tx_sdo",  label: "bridge_4_gravity_of_earth_tx",           std_name: "bridge_gravity_of_earth",           module: 13,  domain: 0 }
+        { name: "bridge_4_scale_factor_tx",               type: "tx_sdo",  label: "bridge_4_scale_factor_tx",               std_name: "bridge_scale_factor",               module: 13,  domain: 0 }
+        { name: "bridge_4_reference_load_tx",             type: "tx_sdo",  label: "bridge_4_reference_load_tx",             std_name: "bridge_reference_load",             module: 13,  domain: 0 }
 
         # Resistor bridge 5
         { name: "bridge_5_gap",                type: "tx_pdo",  label: "bridge_5_gap",                std_name: "bridge_gap",                 module: 15,  domain: 0 }
@@ -147,12 +335,49 @@ module.exports =
         { name: "bridge_5_steady_state",       type: "tx_pdo",  label: "bridge_5_steady_state",       std_name: "bridge_steady_state",        module: 15,  domain: 0 }
         { name: "bridge_5_sync_error",         type: "tx_pdo",  label: "bridge_5_sync_error",         std_name: "bridge_sync_error",          module: 15,  domain: 0 }
         { name: "bridge_5_toggle",             type: "tx_pdo",  label: "bridge_5_toggle",             std_name: "bridge_toggle",              module: 15,  domain: 0 }
+        { name: "bridge_5_int_value",          type: "tx_pdo",  label: "bridge_5_int_value",          std_name: "bridge_int_value",           module: 15,  domain: 0 }
         { name: "bridge_5_real_value",         type: "tx_pdo",  label: "bridge_5_real_value",         std_name: "bridge_real_value",          module: 15,  domain: 0 }
         { name: "bridge_5_start_calibration",  type: "rx_pdo",  label: "bridge_5_start_calibration",  std_name: "bridge_start_calibration",   module: 15,  domain: 0 }
         { name: "bridge_5_disable_calibration",type: "rx_pdo",  label: "bridge_5_disable_calibration",std_name: "bridge_disable_calibration", module: 15,  domain: 0 }
         { name: "bridge_5_input_freeze",       type: "rx_pdo",  label: "bridge_5_input_freeze",       std_name: "bridge_input_freeze",        module: 15,  domain: 0 }
         { name: "bridge_5_sample_mode",        type: "rx_pdo",  label: "bridge_5_sample_mode",        std_name: "bridge_sample_mode",         module: 15,  domain: 0 }
         { name: "bridge_5_tara",               type: "rx_pdo",  label: "bridge_5_tara",               std_name: "bridge_tara",                module: 15,  domain: 0 }
+
+        { name: "bridge_5_mode0_enable_filter_rx",        type: "rx_sdo",  label: "bridge_5_mode0_enable_filter_rx",        std_name: "bridge_mode0_enable_filter",        module: 15,  domain: 0 }
+        { name: "bridge_5_mode1_enable_filter_rx",        type: "rx_sdo",  label: "bridge_5_mode1_enable_filter_rx",        std_name: "bridge_mode1_enable_filter",        module: 15,  domain: 0 }
+        { name: "bridge_5_mode0_enable_averager_rx",      type: "rx_sdo",  label: "bridge_5_mode0_enable_averager_rx",      std_name: "bridge_mode0_enable_averager",      module: 15,  domain: 0 }
+        { name: "bridge_5_mode1_enable_averager_rx",      type: "rx_sdo",  label: "bridge_5_mode1_enable_averager_rx",      std_name: "bridge_mode1_enable_averager",      module: 15,  domain: 0 }
+        { name: "bridge_5_mode0_filter_settings_rx",      type: "rx_sdo",  label: "bridge_5_mode0_filter_settings_rx",      std_name: "bridge_mode0_filter_settings",      module: 15,  domain: 0 }
+        { name: "bridge_5_mode1_filter_settings_rx",      type: "rx_sdo",  label: "bridge_5_mode1_filter_settings_rx",      std_name: "bridge_mode1_filter_settings",      module: 15,  domain: 0 }
+        { name: "bridge_5_dynamic_filter_change_time_rx", type: "rx_sdo",  label: "bridge_5_dynamic_filter_change_time_rx", std_name: "bridge_dynamic_filter_change_time", module: 15,  domain: 0 }
+        { name: "bridge_5_dynamic_filter_delta_rx",       type: "rx_sdo",  label: "bridge_5_dynamic_filter_delta_rx",       std_name: "bridge_dynamic_filter_delta",       module: 15,  domain: 0 }
+        { name: "bridge_5_filter_settings_rx",            type: "rx_sdo",  label: "bridge_5_filter_settings_rx",            std_name: "bridge_filter_settings",            module: 15,  domain: 0 }
+        { name: "bridge_5_gain_rx",                       type: "rx_sdo",  label: "bridge_5_gain_rx",                       std_name: "bridge_gain",                       module: 15,  domain: 0 }
+        { name: "bridge_5_tara_rx",                       type: "rx_sdo",  label: "bridge_5_tara_rx",                       std_name: "bridge_tara",                       module: 15,  domain: 0 }
+        { name: "bridge_5_rated_output_rx",               type: "rx_sdo",  label: "bridge_5_rated_output_rx",               std_name: "bridge_rated_output",               module: 15,  domain: 0 }
+        { name: "bridge_5_nominal_load_rx",               type: "rx_sdo",  label: "bridge_5_nominal_load_rx",               std_name: "bridge_nominal_load",               module: 15,  domain: 0 }
+        { name: "bridge_5_filter_zero_balance_rx",        type: "rx_sdo",  label: "bridge_5_filter_zero_balance_rx",        std_name: "bridge_filter_zero_balance",        module: 15,  domain: 0 }
+        { name: "bridge_5_gravity_of_earth_rx",           type: "rx_sdo",  label: "bridge_5_gravity_of_earth_rx",           std_name: "bridge_gravity_of_earth",           module: 15,  domain: 0 }
+        { name: "bridge_5_scale_factor_rx",               type: "rx_sdo",  label: "bridge_5_scale_factor_rx",               std_name: "bridge_scale_factor",               module: 15,  domain: 0 }
+        { name: "bridge_5_reference_load_rx",             type: "rx_sdo",  label: "bridge_5_reference_load_rx",             std_name: "bridge_reference_load",             module: 15,  domain: 0 }
+
+        { name: "bridge_5_mode0_enable_filter_tx",        type: "tx_sdo",  label: "bridge_5_mode0_enable_filter_tx",        std_name: "bridge_mode0_enable_filter",        module: 15,  domain: 0 }
+        { name: "bridge_5_mode1_enable_filter_tx",        type: "tx_sdo",  label: "bridge_5_mode1_enable_filter_tx",        std_name: "bridge_mode1_enable_filter",        module: 15,  domain: 0 }
+        { name: "bridge_5_mode0_enable_averager_tx",      type: "tx_sdo",  label: "bridge_5_mode0_enable_averager_tx",      std_name: "bridge_mode0_enable_averager",      module: 15,  domain: 0 }
+        { name: "bridge_5_mode1_enable_averager_tx",      type: "tx_sdo",  label: "bridge_5_mode1_enable_averager_tx",      std_name: "bridge_mode1_enable_averager",      module: 15,  domain: 0 }
+        { name: "bridge_5_mode0_filter_settings_tx",      type: "tx_sdo",  label: "bridge_5_mode0_filter_settings_tx",      std_name: "bridge_mode0_filter_settings",      module: 15,  domain: 0 }
+        { name: "bridge_5_mode1_filter_settings_tx",      type: "tx_sdo",  label: "bridge_5_mode1_filter_settings_tx",      std_name: "bridge_mode1_filter_settings",      module: 15,  domain: 0 }
+        { name: "bridge_5_dynamic_filter_change_time_tx", type: "tx_sdo",  label: "bridge_5_dynamic_filter_change_time_tx", std_name: "bridge_dynamic_filter_change_time", module: 15,  domain: 0 }
+        { name: "bridge_5_dynamic_filter_delta_tx",       type: "tx_sdo",  label: "bridge_5_dynamic_filter_delta_tx",       std_name: "bridge_dynamic_filter_delta",       module: 15,  domain: 0 }
+        { name: "bridge_5_filter_settings_tx",            type: "tx_sdo",  label: "bridge_5_filter_settings_tx",            std_name: "bridge_filter_settings",            module: 15,  domain: 0 }
+        { name: "bridge_5_gain_tx",                       type: "tx_sdo",  label: "bridge_5_gain_tx",                       std_name: "bridge_gain",                       module: 15,  domain: 0 }
+        { name: "bridge_5_tara_tx",                       type: "tx_sdo",  label: "bridge_5_tara_tx",                       std_name: "bridge_tara",                       module: 15,  domain: 0 }
+        { name: "bridge_5_rated_output_tx",               type: "tx_sdo",  label: "bridge_5_rated_output_tx",               std_name: "bridge_rated_output",               module: 15,  domain: 0 }
+        { name: "bridge_5_nominal_load_tx",               type: "tx_sdo",  label: "bridge_5_nominal_load_tx",               std_name: "bridge_nominal_load",               module: 15,  domain: 0 }
+        { name: "bridge_5_filter_zero_balance_tx",        type: "tx_sdo",  label: "bridge_5_filter_zero_balance_tx",        std_name: "bridge_filter_zero_balance",        module: 15,  domain: 0 }
+        { name: "bridge_5_gravity_of_earth_tx",           type: "tx_sdo",  label: "bridge_5_gravity_of_earth_tx",           std_name: "bridge_gravity_of_earth",           module: 15,  domain: 0 }
+        { name: "bridge_5_scale_factor_tx",               type: "tx_sdo",  label: "bridge_5_scale_factor_tx",               std_name: "bridge_scale_factor",               module: 15,  domain: 0 }
+        { name: "bridge_5_reference_load_tx",             type: "tx_sdo",  label: "bridge_5_reference_load_tx",             std_name: "bridge_reference_load",             module: 15,  domain: 0 }
 
         # Resistor bridge 6
         { name: "bridge_6_gap",                type: "tx_pdo",  label: "bridge_6_gap",                std_name: "bridge_gap",                 module: 16,  domain: 0 }
@@ -163,12 +388,49 @@ module.exports =
         { name: "bridge_6_steady_state",       type: "tx_pdo",  label: "bridge_6_steady_state",       std_name: "bridge_steady_state",        module: 16,  domain: 0 }
         { name: "bridge_6_sync_error",         type: "tx_pdo",  label: "bridge_6_sync_error",         std_name: "bridge_sync_error",          module: 16,  domain: 0 }
         { name: "bridge_6_toggle",             type: "tx_pdo",  label: "bridge_6_toggle",             std_name: "bridge_toggle",              module: 16,  domain: 0 }
+        { name: "bridge_6_int_value",          type: "tx_pdo",  label: "bridge_6_int_value",          std_name: "bridge_int_value",           module: 16,  domain: 0 }
         { name: "bridge_6_real_value",         type: "tx_pdo",  label: "bridge_6_real_value",         std_name: "bridge_real_value",          module: 16,  domain: 0 }
         { name: "bridge_6_start_calibration",  type: "rx_pdo",  label: "bridge_6_start_calibration",  std_name: "bridge_start_calibration",   module: 16,  domain: 0 }
         { name: "bridge_6_disable_calibration",type: "rx_pdo",  label: "bridge_6_disable_calibration",std_name: "bridge_disable_calibration", module: 16,  domain: 0 }
         { name: "bridge_6_input_freeze",       type: "rx_pdo",  label: "bridge_6_input_freeze",       std_name: "bridge_input_freeze",        module: 16,  domain: 0 }
         { name: "bridge_6_sample_mode",        type: "rx_pdo",  label: "bridge_6_sample_mode",        std_name: "bridge_sample_mode",         module: 16,  domain: 0 }
         { name: "bridge_6_tara",               type: "rx_pdo",  label: "bridge_6_tara",               std_name: "bridge_tara",                module: 16,  domain: 0 }
+
+        { name: "bridge_6_mode0_enable_filter_rx",        type: "rx_sdo",  label: "bridge_6_mode0_enable_filter_rx",        std_name: "bridge_mode0_enable_filter",        module: 16,  domain: 0 }
+        { name: "bridge_6_mode1_enable_filter_rx",        type: "rx_sdo",  label: "bridge_6_mode1_enable_filter_rx",        std_name: "bridge_mode1_enable_filter",        module: 16,  domain: 0 }
+        { name: "bridge_6_mode0_enable_averager_rx",      type: "rx_sdo",  label: "bridge_6_mode0_enable_averager_rx",      std_name: "bridge_mode0_enable_averager",      module: 16,  domain: 0 }
+        { name: "bridge_6_mode1_enable_averager_rx",      type: "rx_sdo",  label: "bridge_6_mode1_enable_averager_rx",      std_name: "bridge_mode1_enable_averager",      module: 16,  domain: 0 }
+        { name: "bridge_6_mode0_filter_settings_rx",      type: "rx_sdo",  label: "bridge_6_mode0_filter_settings_rx",      std_name: "bridge_mode0_filter_settings",      module: 16,  domain: 0 }
+        { name: "bridge_6_mode1_filter_settings_rx",      type: "rx_sdo",  label: "bridge_6_mode1_filter_settings_rx",      std_name: "bridge_mode1_filter_settings",      module: 16,  domain: 0 }
+        { name: "bridge_6_dynamic_filter_change_time_rx", type: "rx_sdo",  label: "bridge_6_dynamic_filter_change_time_rx", std_name: "bridge_dynamic_filter_change_time", module: 16,  domain: 0 }
+        { name: "bridge_6_dynamic_filter_delta_rx",       type: "rx_sdo",  label: "bridge_6_dynamic_filter_delta_rx",       std_name: "bridge_dynamic_filter_delta",       module: 16,  domain: 0 }
+        { name: "bridge_6_filter_settings_rx",            type: "rx_sdo",  label: "bridge_6_filter_settings_rx",            std_name: "bridge_filter_settings",            module: 16,  domain: 0 }
+        { name: "bridge_6_gain_rx",                       type: "rx_sdo",  label: "bridge_6_gain_rx",                       std_name: "bridge_gain",                       module: 16,  domain: 0 }
+        { name: "bridge_6_tara_rx",                       type: "rx_sdo",  label: "bridge_6_tara_rx",                       std_name: "bridge_tara",                       module: 16,  domain: 0 }
+        { name: "bridge_6_rated_output_rx",               type: "rx_sdo",  label: "bridge_6_rated_output_rx",               std_name: "bridge_rated_output",               module: 16,  domain: 0 }
+        { name: "bridge_6_nominal_load_rx",               type: "rx_sdo",  label: "bridge_6_nominal_load_rx",               std_name: "bridge_nominal_load",               module: 16,  domain: 0 }
+        { name: "bridge_6_filter_zero_balance_rx",        type: "rx_sdo",  label: "bridge_6_filter_zero_balance_rx",        std_name: "bridge_filter_zero_balance",        module: 16,  domain: 0 }
+        { name: "bridge_6_gravity_of_earth_rx",           type: "rx_sdo",  label: "bridge_6_gravity_of_earth_rx",           std_name: "bridge_gravity_of_earth",           module: 16,  domain: 0 }
+        { name: "bridge_6_scale_factor_rx",               type: "rx_sdo",  label: "bridge_6_scale_factor_rx",               std_name: "bridge_scale_factor",               module: 16,  domain: 0 }
+        { name: "bridge_6_reference_load_rx",             type: "rx_sdo",  label: "bridge_6_reference_load_rx",             std_name: "bridge_reference_load",             module: 16,  domain: 0 }
+
+        { name: "bridge_6_mode0_enable_filter_tx",        type: "tx_sdo",  label: "bridge_6_mode0_enable_filter_tx",        std_name: "bridge_mode0_enable_filter",        module: 16,  domain: 0 }
+        { name: "bridge_6_mode1_enable_filter_tx",        type: "tx_sdo",  label: "bridge_6_mode1_enable_filter_tx",        std_name: "bridge_mode1_enable_filter",        module: 16,  domain: 0 }
+        { name: "bridge_6_mode0_enable_averager_tx",      type: "tx_sdo",  label: "bridge_6_mode0_enable_averager_tx",      std_name: "bridge_mode0_enable_averager",      module: 16,  domain: 0 }
+        { name: "bridge_6_mode1_enable_averager_tx",      type: "tx_sdo",  label: "bridge_6_mode1_enable_averager_tx",      std_name: "bridge_mode1_enable_averager",      module: 16,  domain: 0 }
+        { name: "bridge_6_mode0_filter_settings_tx",      type: "tx_sdo",  label: "bridge_6_mode0_filter_settings_tx",      std_name: "bridge_mode0_filter_settings",      module: 16,  domain: 0 }
+        { name: "bridge_6_mode1_filter_settings_tx",      type: "tx_sdo",  label: "bridge_6_mode1_filter_settings_tx",      std_name: "bridge_mode1_filter_settings",      module: 16,  domain: 0 }
+        { name: "bridge_6_dynamic_filter_change_time_tx", type: "tx_sdo",  label: "bridge_6_dynamic_filter_change_time_tx", std_name: "bridge_dynamic_filter_change_time", module: 16,  domain: 0 }
+        { name: "bridge_6_dynamic_filter_delta_tx",       type: "tx_sdo",  label: "bridge_6_dynamic_filter_delta_tx",       std_name: "bridge_dynamic_filter_delta",       module: 16,  domain: 0 }
+        { name: "bridge_6_filter_settings_tx",            type: "tx_sdo",  label: "bridge_6_filter_settings_tx",            std_name: "bridge_filter_settings",            module: 16,  domain: 0 }
+        { name: "bridge_6_gain_tx",                       type: "tx_sdo",  label: "bridge_6_gain_tx",                       std_name: "bridge_gain",                       module: 16,  domain: 0 }
+        { name: "bridge_6_tara_tx",                       type: "tx_sdo",  label: "bridge_6_tara_tx",                       std_name: "bridge_tara",                       module: 16,  domain: 0 }
+        { name: "bridge_6_rated_output_tx",               type: "tx_sdo",  label: "bridge_6_rated_output_tx",               std_name: "bridge_rated_output",               module: 16,  domain: 0 }
+        { name: "bridge_6_nominal_load_tx",               type: "tx_sdo",  label: "bridge_6_nominal_load_tx",               std_name: "bridge_nominal_load",               module: 16,  domain: 0 }
+        { name: "bridge_6_filter_zero_balance_tx",        type: "tx_sdo",  label: "bridge_6_filter_zero_balance_tx",        std_name: "bridge_filter_zero_balance",        module: 16,  domain: 0 }
+        { name: "bridge_6_gravity_of_earth_tx",           type: "tx_sdo",  label: "bridge_6_gravity_of_earth_tx",           std_name: "bridge_gravity_of_earth",           module: 16,  domain: 0 }
+        { name: "bridge_6_scale_factor_tx",               type: "tx_sdo",  label: "bridge_6_scale_factor_tx",               std_name: "bridge_scale_factor",               module: 16,  domain: 0 }
+        { name: "bridge_6_reference_load_tx",             type: "tx_sdo",  label: "bridge_6_reference_load_tx",             std_name: "bridge_reference_load",             module: 16,  domain: 0 }
     ]
 
 
@@ -245,7 +507,20 @@ module.exports =
             vendor_id: 2,
             product_code: 0x138a3052,
             revision_id: 0x00140000,
-            objs: []
+            objs: [
+                {name: "ssi_in_1_data_error",    index: 0x6000, sub_index: 0x1, bit: 0}
+                {name: "ssi_in_1_frame_error",   index: 0x6000, sub_index: 0x2, bit: 0}
+                {name: "ssi_in_1_power_error",   index: 0x6000, sub_index: 0x3, bit: 0}
+                {name: "ssi_in_1_data_mismatch", index: 0x6000, sub_index: 0x4, bit: 0}
+                {name: "ssi_in_1_sync_error",    index: 0x6000, sub_index: 0xe, bit: 0}
+                {name: "ssi_in_1_value",         index: 0x6000, sub_index: 0x11, bit: 0}
+                {name: "ssi_in_2_data_error",    index: 0x6010, sub_index: 0x1, bit: 0}
+                {name: "ssi_in_2_frame_error",   index: 0x6010, sub_index: 0x2, bit: 0}
+                {name: "ssi_in_2_power_error",   index: 0x6010, sub_index: 0x3, bit: 0}
+                {name: "ssi_in_2_data_mismatch", index: 0x6010, sub_index: 0x4, bit: 0}
+                {name: "ssi_in_2_sync_error",    index: 0x6010, sub_index: 0xe, bit: 0}
+                {name: "ssi_in_2_value",         index: 0x6010, sub_index: 0x11, bit: 0}
+            ]
         }
         { #Slaves 8-11-14
             product_name: "EL9510",
@@ -271,11 +546,31 @@ module.exports =
                 {name: "bridge_steady_state", index: 0x6000, sub_index: 0x9, bit: 0}
                 {name: "bridge_sync_error",   index: 0x6000, sub_index: 0xe, bit: 0}
                 {name: "bridge_toggle",       index: 0x6000, sub_index: 0x10, bit: 0}
+                {name: "bridge_int_value",    index: 0x6000, sub_index: 0x11, bit: 0}
                 {name: "bridge_real_value",   index: 0x6000, sub_index: 0x12, bit: 0}
-                {name: "bridge_start_calibration",   index: 0x7000, sub_index: 0x1, bit: 0}
-                {name: "bridge_disable_calibration",   index: 0x7000, sub_index: 0x2, bit: 0}
-                {name: "bridge_input_freeze",   index: 0x7000, sub_index: 0x3, bit: 0}
-                {name: "bridge_sample_mode",   index: 0x7000, sub_index: 0x4, bit: 0}
+                {name: "bridge_start_calibration",          index: 0x7000, sub_index: 0x1, bit: 0}
+                {name: "bridge_disable_calibration",        index: 0x7000, sub_index: 0x2, bit: 0}
+                {name: "bridge_input_freeze",               index: 0x7000, sub_index: 0x3, bit: 0}
+                {name: "bridge_sample_mode",                index: 0x7000, sub_index: 0x4, bit: 0}
+                {name: "bridge_filter_frequency",           index: 0x7000, sub_index: 0x11, bit: 0}
+
+                {name: "bridge_mode0_enable_filter",        index: 0x8000, sub_index: 0x01, bit: 0}
+                {name: "bridge_mode1_enable_filter",        index: 0x8000, sub_index: 0x02, bit: 0}
+                {name: "bridge_mode0_enable_averager",      index: 0x8000, sub_index: 0x03, bit: 0}
+                {name: "bridge_mode1_enable_averager",      index: 0x8000, sub_index: 0x04, bit: 0}
+                {name: "bridge_mode0_filter_settings",      index: 0x8000, sub_index: 0x11, bit: 0}
+                {name: "bridge_mode1_filter_settings",      index: 0x8000, sub_index: 0x12, bit: 0}
+                {name: "bridge_dynamic_filter_change_time", index: 0x8000, sub_index: 0x13, bit: 0}
+                {name: "bridge_dynamic_filter_delta",       index: 0x8000, sub_index: 0x14, bit: 0}
+                {name: "bridge_filter_settings",            index: 0x8010, sub_index: 0x15, bit: 0}
+                {name: "bridge_gain",                       index: 0x8000, sub_index: 0x21, bit: 0}
+                {name: "bridge_tara",                       index: 0x8000, sub_index: 0x21, bit: 0}
+                {name: "bridge_rated_output",               index: 0x8000, sub_index: 0x23, bit: 0}
+                {name: "bridge_nominal_load",               index: 0x8000, sub_index: 0x24, bit: 0}
+                {name: "bridge_filter_zero_balance",        index: 0x8000, sub_index: 0x25, bit: 0}
+                {name: "bridge_gravity_of_earth",           index: 0x8000, sub_index: 0x26, bit: 0}
+                {name: "bridge_scale_factor",               index: 0x8000, sub_index: 0x27, bit: 0}
+                {name: "bridge_reference_load",             index: 0x8000, sub_index: 0x28, bit: 0}
             ]
         }
     ]
