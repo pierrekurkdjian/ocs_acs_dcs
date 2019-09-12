@@ -21,8 +21,9 @@ module.exports =
     inputs:
         digital_in:          { name: 'digital_in',            port_type: 'pull',  url: 'tcp://127.0.0.1:8101', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
         analog_in:           { name: 'analog_in',             port_type: 'pull',  url: 'tcp://127.0.0.1:8102', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
-        power_supply:        { name: 'power_supply',          port_type: 'pull',  url: 'tcp://127.0.0.1:8103', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
-        resistor_bridge_status: { name: 'resistor_bridge_status', port_type: 'pull',  url: 'tcp://127.0.0.1:8104', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
+        ssi_in:              { name: 'ssi_in',                port_type: 'pull',  url: 'tcp://127.0.0.1:8103', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
+        power_supply:        { name: 'power_supply',          port_type: 'pull',  url: 'tcp://127.0.0.1:8104', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
+        resistor_bridge_status: { name: 'resistor_bridge_status', port_type: 'pull',  url: 'tcp://127.0.0.1:8105', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 100,   owner: true  }
         digital_out_ext:     { name: 'digital_out_ext',       port_type: 'pull',  url: 'tcp://127.0.0.1:8401', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 1,     owner: true  }
         analog_out_ext:      { name: 'analog_out_ext',        port_type: 'pull',  url: 'tcp://127.0.0.1:8402', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 1,     owner: true  }
         power_supply_ext:    { name: 'power_supply_ext',      port_type: 'pull',  url: 'tcp://127.0.0.1:8403', blocking_mode: 'sync',  max_rate: 1000,  nom_rate: 1,     owner: true  }
