@@ -35,6 +35,22 @@ StructType "analog_out_t",
         analog_out_1_value:    { desc: "analog_out_1_value", type: "uint16", units: "" }
         analog_out_2_value:    { desc: "analog_out_2_value", type: "uint16", units: "" }
 
+StructType "ssi_in_t",
+    desc:    "ssi_in_t"
+    elements:
+        ssi_in_1_data_error:     { desc: "ssi_in_1_data_error",    type: "bool", units: "" }
+        ssi_in_1_frame_error:    { desc: "ssi_in_1_frame_error",   type: "bool", units: "" }
+        ssi_in_1_power_error:    { desc: "ssi_in_1_power_error",   type: "bool", units: "" }
+        ssi_in_1_data_mismatch:  { desc: "ssi_in_1_data_mismatch", type: "bool", units: "" }
+        ssi_in_1_sync_error:     { desc: "ssi_in_1_sync_error",    type: "bool", units: "" }
+        ssi_in_1_value:          { desc: "ssi_in_1_value",         type: "uint32", units: "" }
+        ssi_in_2_data_error:     { desc: "ssi_in_2_data_error",    type: "bool", units: "" }
+        ssi_in_2_frame_error:    { desc: "ssi_in_2_frame_error",   type: "bool", units: "" }
+        ssi_in_2_power_error:    { desc: "ssi_in_2_power_error",   type: "bool", units: "" }
+        ssi_in_2_data_mismatch:  { desc: "ssi_in_2_data_mismatch", type: "bool", units: "" }
+        ssi_in_2_sync_error:     { desc: "ssi_in_2_sync_error",    type: "bool", units: "" }
+        ssi_in_2_value:          { desc: "ssi_in_2_value",         type: "uint32", units: "" }
+
 StructType "power_supply_t",
     desc: "power supply state",
     elements:
@@ -52,13 +68,57 @@ StructType "resistor_bridge_status_t",
         bridge_sync_error:         { desc: "bridge_sync_error",           type: "bool", units: "" }
         bridge_toggle:             { desc: "bridge_toggle",               type: "bool", units: "" }
         bridge_int_value:          { desc: "bridge_int_value",            type: "int32", units: "" }
-        bridge_real_value:         { desc: "bridge_real_value",           type: "float", units: "" }
+        bridge_real_value:         { desc: "bridge_int_value",            type: "int32", units: "" }
+        bridge_weight_kg:          { desc: "bridge_weight_kg",            type: "float", units: "" }
+
+        bridge_mode0_enable_filter:        { desc: "bridge_mode0_enable_filter (from module)",        type: "bool",   units: "" }
+        bridge_mode1_enable_filter:        { desc: "bridge_mode1_enable_filter (from module)",        type: "bool",   units: "" }
+        bridge_mode0_enable_averager:      { desc: "bridge_mode0_enable_averager (from module)",      type: "bool",   units: "" }
+        bridge_mode1_enable_averager:      { desc: "bridge_mode1_enable_averager (from module)",      type: "bool",   units: "" }
+        bridge_mode0_filter_settings:      { desc: "bridge_mode0_filter_settings (from module)",      type: "uint16", units: "" }
+        bridge_mode1_filter_settings:      { desc: "bridge_mode1_filter_settings (from module)",      type: "uint16", units: "" }
+        bridge_dynamic_filter_change_time: { desc: "bridge_dynamic_filter_change_time (from module)", type: "uint16", units: "" }
+        bridge_dynamic_filter_delta:       { desc: "bridge_dynamic_filter_delta (from module)",       type: "float",  units: "" }
+        bridge_filter_settings:            { desc: "bridge_filter_settings (from module)",            type: "uint16", units: "" }
+        bridge_gain:                       { desc: "bridge_gain (from module)",                       type: "float",  units: "" }
+        bridge_tara:                       { desc: "bridge_tara (from module)",                       type: "float",  units: "" }
+        bridge_rated_output:               { desc: "bridge_rated_output (from module)",               type: "float",  units: "" }
+        bridge_nominal_load:               { desc: "bridge_nominal_load (from module)",               type: "float",  units: "" }
+        bridge_filter_zero_balance:        { desc: "bridge_filter_zero_balance (from module)",        type: "float",  units: "" }
+        bridge_gravity_of_earth:           { desc: "bridge_gravity_of_earth (from module)",           type: "float",  units: "" }
+        bridge_scale_factor:               { desc: "bridge_scale_factor (from module)",               type: "float",  units: "" }
+        bridge_reference_load:             { desc: "bridge_reference_load (from module)",             type: "float",  units: "" }
 
 StructType "resistor_bridge_control_t",
     desc: "resistor bridge control",
     elements:
-        bridge_start_calibration:    { desc: "bridge_start_calibration",     type: "bool", units: "" }
-        bridge_disable_calibration:  { desc: "bridge_disable_calibration",   type: "bool", units: "" }
-        bridge_input_freeze:         { desc: "bridge_input_freeze",          type: "bool", units: "" }
-        bridge_sample_mode:          { desc: "bridge_sample_mode",           type: "bool", units: "" }
-        bridge_tara:                 { desc: "bridge_tara",                  type: "bool", units: "" }
+        bridge_start_calibration:    { desc: "bridge_start_calibration",     type: "bool",  units: "" }
+        bridge_disable_calibration:  { desc: "bridge_disable_calibration",   type: "bool",  units: "" }
+        bridge_input_freeze:         { desc: "bridge_input_freeze",          type: "bool",  units: "" }
+        bridge_sample_mode:          { desc: "bridge_sample_mode",           type: "bool",  units: "" }
+        #bridge_tara:                 { desc: "bridge_tara",                  type: "bool",  units: "" }
+
+        bridge_mode0_enable_filter:        { desc: "bridge_mode0_enable_filter (to module)",        type: "bool",   units: "" }
+        bridge_mode1_enable_filter:        { desc: "bridge_mode1_enable_filter (to module)",        type: "bool",   units: "" }
+        bridge_mode0_enable_averager:      { desc: "bridge_mode0_enable_averager (to module)",      type: "bool",   units: "" }
+        bridge_mode1_enable_averager:      { desc: "bridge_mode1_enable_averager (to module)",      type: "bool",   units: "" }
+        bridge_mode0_filter_settings:      { desc: "bridge_mode0_filter_settings (to module)",      type: "uint16", units: "" }
+        bridge_mode1_filter_settings:      { desc: "bridge_mode1_filter_settings (to module)",      type: "uint16", units: "" }
+        bridge_dynamic_filter_change_time: { desc: "bridge_dynamic_filter_change_time (to module)", type: "uint16", units: "" }
+        bridge_dynamic_filter_delta:       { desc: "bridge_dynamic_filter_delta (to module)",       type: "float",  units: "" }
+        bridge_filter_settings:            { desc: "bridge_filter_settings (to module)",            type: "uint16", units: "" }
+        bridge_gain:                       { desc: "bridge_gain (to module)",                       type: "float",  units: "" }
+        bridge_tara:                       { desc: "bridge_tara (to module)",                       type: "float",  units: "" }
+        bridge_rated_output:               { desc: "bridge_rated_output (to module)",               type: "float",  units: "" }
+        bridge_nominal_load:               { desc: "bridge_nominal_load (to module)",               type: "float",  units: "" }
+        bridge_filter_zero_balance:        { desc: "bridge_filter_zero_balance (to module)",        type: "float",  units: "" }
+        bridge_gravity_of_earth:           { desc: "bridge_gravity_of_earth (to module)",           type: "float",  units: "" }
+        bridge_scale_factor:               { desc: "bridge_scale_factor (to module)",               type: "float",  units: "" }
+        bridge_reference_load:             { desc: "bridge_reference_load (to module)",             type: "float",  units: "" }
+
+        coeff_compression_a0:        { desc: "a0",                           type: "float", units: "" }
+        coeff_compression_a1:        { desc: "a1*V",                         type: "float", units: "" }
+        coeff_compression_a2:        { desc: "a2*V*V",                       type: "float", units: "" }
+        coeff_tension_a0:            { desc: "a0",                           type: "float", units: "" }
+        coeff_tension_a1:            { desc: "a1*V",                         type: "float", units: "" }
+        coeff_tension_a2:            { desc: "a2*V*V",                       type: "float", units: "" }
