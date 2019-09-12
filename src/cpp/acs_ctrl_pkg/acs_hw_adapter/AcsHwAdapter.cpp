@@ -22,18 +22,20 @@ AcsHwAdapter::~AcsHwAdapter()
 
 void AcsHwAdapter::step()
 {
-    if (is_step_rate(20))
+    //XXX add your code here
+
+    if (is_step_rate(49))
     {
-      // std::cout << "ADAPTER: resistor_bridge_status[1].bridge_real_value     " << resistor_bridge_status[1].bridge_real_value    << std::endl;
-      // std::cout << "ADAPTER: resistor_bridge_status[2].bridge_real_value     " << resistor_bridge_status[2].bridge_real_value    << std::endl;
-      // std::cout << "ADAPTER: resistor_bridge_status[3].bridge_real_value     " << resistor_bridge_status[3].bridge_real_value    << std::endl;
-      // std::cout << "ADAPTER: resistor_bridge_status[4].bridge_real_value     " << resistor_bridge_status[4].bridge_real_value    << std::endl;
-      // std::cout << "ADAPTER: resistor_bridge_status[5].bridge_real_value     " << resistor_bridge_status[5].bridge_real_value    << std::endl;
-      // std::cout << "ADAPTER: resistor_bridge_status[6].bridge_real_value     " << resistor_bridge_status[6].bridge_real_value    << std::endl;
-        // std::cout << "<ADAPTER Boolean sent     on digital channel    " << digital_out.digital_out_1_value << ">" << std::endl;
-        // std::cout << "<ADAPTER Boolean received on digital channel    " << digital_in.digital_in_1_value   << ">" << std::endl;
-        // std::cout << "ADAPTER Boolean sent     on digital channel 2           " << digital_out.digital_out_2_value << std::endl;
-        // std::cout << "ADAPTER Boolean received on digital channel 2           " << digital_in.digital_in_2_value   << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[1].bridge_steady_state  " << resistor_bridge_status[1].bridge_steady_state    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[2].bridge_steady_state  " << resistor_bridge_status[2].bridge_steady_state    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[3].bridge_steady_state  " << resistor_bridge_status[3].bridge_steady_state    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[4].bridge_steady_state  " << resistor_bridge_status[4].bridge_steady_state    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[5].bridge_steady_state  " << resistor_bridge_status[5].bridge_steady_state    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[1].bridge_int_value     " << resistor_bridge_status[1].bridge_int_value    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[2].bridge_int_value     " << resistor_bridge_status[2].bridge_int_value    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[3].bridge_int_value     " << resistor_bridge_status[3].bridge_int_value    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[4].bridge_int_value     " << resistor_bridge_status[4].bridge_int_value    << std::endl;
+        // std::cout << "ADAPTER resistor_bridge_status[5].bridge_int_value     " << resistor_bridge_status[5].bridge_int_value    << std::endl;
     }
 }
 

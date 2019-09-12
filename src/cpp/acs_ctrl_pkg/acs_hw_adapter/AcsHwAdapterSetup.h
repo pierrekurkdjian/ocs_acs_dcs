@@ -34,9 +34,10 @@ struct AcsHwAdapterSetup : public  EthercatAdapterSetup
     {
         DataIODef<digital_in_t>        digital_in;
         DataIODef<analog_in_t>         analog_in;
+        DataIODef<std::array<ssi_in_t, 4>>  ssi_in;
         DataIODef<std::array<power_supply_t, 4>>  power_supply;
         DataIODef<std::array<resistor_bridge_status_t, 7>>  resistor_bridge_status;
-        MSGPACK_DEFINE_MAP(digital_in, analog_in, power_supply, resistor_bridge_status, sdo_read_update_done, op_state_value)
+        MSGPACK_DEFINE_MAP(digital_in, analog_in, ssi_in, power_supply, resistor_bridge_status, sdo_read_update_done, op_state_value)
     };
 
     PropertyConf     properties;

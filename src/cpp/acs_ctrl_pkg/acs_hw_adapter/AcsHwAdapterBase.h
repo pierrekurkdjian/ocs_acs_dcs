@@ -66,6 +66,7 @@ class AcsHwAdapterBase : public EthercatAdapter
         // Outputs declaration
         digital_in_t             digital_in;          // Digital input (values)
         analog_in_t              analog_in;           // Analog input (values + status)
+        std::array<ssi_in_t, 4>  ssi_in;              // SSI input (values + status)
         std::array<power_supply_t, 4> power_supply;        // Power supply state
         std::array<resistor_bridge_status_t, 7> resistor_bridge_status; // Resistor bridge status
 
