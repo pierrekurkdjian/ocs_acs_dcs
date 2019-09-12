@@ -19,18 +19,20 @@ Controller         'acs_main_ctrl',
     stage:         "1"
 
     input_ports:
-        digital_in:                 { type: 'digital_in_t',                protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true,  desc: 'Digital output (values)' }
-        analog_in:                  { type: 'analog_in_t',                 protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true,  desc: 'Analog output (values)' }
+        digital_in:                  { type: 'digital_in_t',                 protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true,  desc: 'Digital output (values)' }
+        analog_in:                   { type: 'analog_in_t',                  protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true,  desc: 'Analog output (values)' }
+        ssi_in:                      { type: 'ssi_in_t[4]',                  protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true, desc: 'Power supply state' }
         power_supply:                { type: 'power_supply_t[4]',            protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true, desc: 'Power supply state' }
         resistor_bridge_status:      { type: 'resistor_bridge_status_t[7]',  protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true, desc: 'Resistor bridge status' }
         digital_out_ext:             { type: 'digital_out_t',                protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true,  desc: 'Digital output (values)' }
         analog_out_ext:              { type: 'analog_out_t',                 protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true,  desc: 'Analog output (values)' }
         power_supply_ext:            { type: 'power_supply_t[4]',            protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true, desc: 'Power supply state' }
         resistor_bridge_status_ext:  { type: 'resistor_bridge_status_t[7]',  protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true, desc: 'Resistor bridge status' }
+        # load_cell_coeff:             { type: 'load_cell_coeff_t[7]',         protocol: 'pull', max_rate: 1000, blocking_mode: 'sync', owner: true, desc: 'Coeff of the 2nd order regression linking voltage and encoder weight' }
 
     output_ports:
-        digital_out:                  { type: 'digital_out_t',                 protocol: 'push', max_rate: 1000, blocking_mode: 'sync', owner: false, desc: 'Digital input (values)' }
-        analog_out:                   { type: 'analog_out_t',                  protocol: 'push', max_rate: 1000, blocking_mode: 'sync', owner: false, desc: 'Analog input (values + status)' }
+        digital_out:                 { type: 'digital_out_t',                protocol: 'push', max_rate: 1000, blocking_mode: 'sync', owner: false, desc: 'Digital input (values)' }
+        analog_out:                  { type: 'analog_out_t',                 protocol: 'push', max_rate: 1000, blocking_mode: 'sync', owner: false, desc: 'Analog input (values + status)' }
         resistor_bridge_control:     { type: 'resistor_bridge_control_t[7]', protocol: 'push', max_rate: 1000, blocking_mode: 'sync', owner: false,  desc: 'Resistor bridge control' }
         digital_in_ext:              { type: 'digital_in_t',                 protocol: 'push', max_rate: 1000, blocking_mode: 'sync', owner: false, desc: 'Digital input (values)' }
         analog_in_ext:               { type: 'analog_in_t',                  protocol: 'push', max_rate: 1000, blocking_mode: 'sync', owner: false, desc: 'Analog input (values + status)' }
