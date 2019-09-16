@@ -14,7 +14,6 @@ M1acsHwAdapter::M1acsHwAdapter(
                             int comp_stack_size)
     : M1acsHwAdapterBase(comp_uri, comp_name, comp_host, comp_port, comp_acl, comp_scan_rate, comp_prio, comp_stack_size)
 {
-    sdo_write_enable = true;
 }
 
 M1acsHwAdapter::~M1acsHwAdapter()
@@ -35,11 +34,8 @@ void M1acsHwAdapter::step()
 void M1acsHwAdapter::setup()
 {
     //setup async input handlers
-
     //ex: new_async_input_handler ("my_input_name", this, &M1acsHwAdapter::my_input_handler);
-
     //add behaviors to features
-
     //other initializations
-
+    sdo_write_enable = true;
 }
