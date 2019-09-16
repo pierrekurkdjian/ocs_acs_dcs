@@ -7,7 +7,7 @@ gmt_global    = process.env.GMT_GLOBAL
 
 [base_config] = require "#{gmt_global}/etc/webpack/webpack.base"
 project_name  = "ocs"
-module_name   = "acs_dcs"
+module_name   = "m1acs_dcs"
 
 
 model_config =
