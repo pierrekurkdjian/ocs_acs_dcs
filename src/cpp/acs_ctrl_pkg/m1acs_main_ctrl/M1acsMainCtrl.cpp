@@ -14,17 +14,6 @@ M1acsMainCtrl::M1acsMainCtrl(
                             int comp_stack_size)
     : M1acsMainCtrlBase(comp_uri, comp_name, comp_host, comp_port, comp_acl, comp_scan_rate, comp_prio, comp_stack_size)
 {
-      analog_out.analog_out_1_value = 20000;
-      analog_out.analog_out_2_value = 20000;
-      for(m1acs_resistor_bridge_control_t load_cell_module : resistor_bridge_control)
-      {
-          load_cell_module.bridge_tara           = true;
-          load_cell_module.bridge_gain           = 1;
-          load_cell_module.bridge_rated_output   = 2;
-          load_cell_module.bridge_nominal_load   = 1;
-          load_cell_module.bridge_scale_factor   = 1e+06;
-          load_cell_module.bridge_reference_load = 5;
-      }
 }
 
 M1acsMainCtrl::~M1acsMainCtrl()
@@ -167,11 +156,18 @@ void M1acsMainCtrl::step()
 void M1acsMainCtrl::setup()
 {
     //setup async input handlers
-
     //ex: new_async_input_handler ("my_input_name", this, &M1acsMainCtrl::my_input_handler);
-
     //add behaviors to features
-
     //other initializations
-
+    analog_out.analog_out_1_value = 20000;
+    analog_out.analog_out_2_value = 20000;
+    for(m1acs_resistor_bridge_control_t load_cell_module : resistor_bridge_control)
+    {
+        load_cell_module.bridge_tara           = true;
+        load_cell_module.bridge_gain           = 1;
+        load_cell_module.bridge_rated_output   = 2;
+        load_cell_module.bridge_nominal_load   = 1;
+        load_cell_module.bridge_scale_factor   = 1e+06;
+        load_cell_module.bridge_reference_load = 5;
+    }
 }
